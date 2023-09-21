@@ -15,6 +15,14 @@ class Klient
     )
   end
 
+  def <<(*data)
+    data.each { |d| @ssl_socket << "#{d[0]}: #{d[1]}" << "\r\n" }
+  end
+
+  def <<(**data)
+    data.each { |k, v| @ssl_socket << "#{k}: #{v}" << "\r\n" }
+  end
+
   def <<(data : String | Nil)
     @ssl_socket << data << "\r\n"
   end
