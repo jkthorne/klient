@@ -56,6 +56,13 @@ class Klient
     results
   end
 
+  def headers
+    while true
+      line = @ssl_socket.gets("\r\n", chomp: true)
+      break if line.nil? || line.empty?
+    end
+  end
+
   def body(length : Int32)
     @ssl_socket.read_string(length)
   end
