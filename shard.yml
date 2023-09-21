@@ -1,0 +1,9 @@
+name: klient
+version: 0.1.0
+
+authors:
+  - Jack Thorne <jack@myrenee.io>
+
+crystal: 1.9.2
+
+license: MIT
